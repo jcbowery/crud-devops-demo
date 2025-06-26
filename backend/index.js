@@ -1,12 +1,18 @@
 // backend/index.js
+require('dotenv').config();
 const express = require('express'); // Import Express for building the API
 const { Pool } = require('pg'); // Import PostgreSQL client
 const app = express(); // Create an Express app
 app.use(express.json()); // Parse JSON request bodies
 
 // Connect to PostgreSQL using DATABASE_URL from environment variables
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-
+const pool = new Pool({
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT, 10),
+  database: process.env.DB_NAME,
+});
 // Health check endpoint for Kubernetes probes and monitoring
 app.get('/healthz', (req, res) => res.json({ status: 'ok' }));
 
