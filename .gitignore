@@ -1,0 +1,53 @@
+# Node modules
+backend/node_modules/
+frontend/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv files (store secrets)
+.env
+.env.local
+.env.*.local
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# build outputs
+frontend/build/
+backend/dist/
+
+# Docker
+*.tgz
+docker-compose.override.yml
+**/.docker/
+**/Dockerfile.*
+**/docker-compose*.yml
+*.tar
+*.img
+
+# Postgres volume (optional, if mapped locally)
+pgdata/
+
+# Database dumps
+*.sql
+*.sqlite
+*.dump
+
+# Misc
+coverage/
+*.iml
